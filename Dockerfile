@@ -15,6 +15,9 @@ RUN echo "Asia/Tokyo" > /etc/timezone \
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo \
  && chmod a+x /bin/repo \
  && git config --global color.ui auto
+ && locale-gen ja_JP.UTF-8
+
+ENV LANG=ja_JP.UTF-8
 WORKDIR /usr/java/
 
 RUN chmod +x /tmp/jdk-6u45-linux-x64.bin \
